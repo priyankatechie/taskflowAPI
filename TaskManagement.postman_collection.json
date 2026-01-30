@@ -1,0 +1,259 @@
+{
+  "info": {
+    "_postman_id": "d5d92fbb-6998-4477-881c-ecda6222d9bd",
+    "name": "TaskManagement",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "46469434"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Sakshi Kakade\",\r\n  \"email\": \"sk@gmail.com\",\r\n  \"password\": \"Sakshi@22\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"sk@gmail.com\",\r\n  \"password\": \"Sakshi@22\"\r\n}\r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Task",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJza0BnbWFpbC5jb20iLCJpYXQiOjE3Njk3NzE1NzYsImV4cCI6MTc2OTg1Nzk3Nn0.sxUsA_R9aTseR_fVg1J7Tzc3axcB2dfsnmyq8qrWhc8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Complete Taskt\",\r\n  \"description\": \"Finish Task\",\r\n  \"priority\": \"Low\",\r\n  \"status\": \"IN_PROGRESS\",\r\n  \"dueDate\": \"2026-07-15\"\r\n}\r\n\r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tasks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetAllTask",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJza0BnbWFpbC5jb20iLCJpYXQiOjE3Njk3NzE1NzYsImV4cCI6MTc2OTg1Nzk3Nn0.sxUsA_R9aTseR_fVg1J7Tzc3axcB2dfsnmyq8qrWhc8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n\r\n\r\n"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tasks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetByID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJza0BnbWFpbC5jb20iLCJpYXQiOjE3Njk3NzQ2NTEsImV4cCI6MTc2OTg2MTA1MX0.4oJ6A64iOp2v1SxJmp7PTMfUiauYfpG3bgkomdgEAOU",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n\r\n\r\n"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tasks/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tasks",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Task",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJza0BnbWFpbC5jb20iLCJpYXQiOjE3Njk3NzQ2NTEsImV4cCI6MTc2OTg2MTA1MX0.4oJ6A64iOp2v1SxJmp7PTMfUiauYfpG3bgkomdgEAOU",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"title\": \"Completed Task\",\r\n  \"description\": \"Finish Task\",\r\n  \"priority\": \"Low\",\r\n  \"status\": \"IN_PROGRESS\",\r\n  \"dueDate\": \"2026-07-15\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tasks/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tasks",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Task",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJza0BnbWFpbC5jb20iLCJpYXQiOjE3Njk3NzQ2NTEsImV4cCI6MTc2OTg2MTA1MX0.4oJ6A64iOp2v1SxJmp7PTMfUiauYfpG3bgkomdgEAOU",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tasks/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tasks",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
